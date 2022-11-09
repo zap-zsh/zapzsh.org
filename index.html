@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Zap</title>
-    <link rel="shortcut icon" href="Z-test.png" />
+    <link rel="shortcut icon" href="images/zap-logo.svg" />
 
     <link rel="stylesheet" href="styles.css" />
 
@@ -21,6 +21,7 @@
   <body>
     <main>
       <div class="introduction">
+        <img src="images/zap-logo.svg" alt="" class="hero" />
         <h1>Meet Zap,</h1>
         <h2>a plugin manager for zsh</h2>
         <p><i>that does what you except.</i></p>
@@ -30,7 +31,7 @@
           <div class="codeblock" onclick="copy()">
             sh <(curl -s https://raw<wbr />.githubusercontent<wbr />.com/zap-zsh/zap/master/install.sh)
           </div>
-          <div style='display:none;' id="test">Copied!</div>
+          <div style="display: none" id="test">Copied!</div>
         </div>
       </div>
     </main>
@@ -40,9 +41,9 @@
           'sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)'
         )
         document.getElementById('test').style.display = 'block'
-        setTimeout(function() {
-          document.getElementById('test').style.display = 'none';
-        }, 2000);
+        setTimeout(function () {
+          document.getElementById('test').style.display = 'none'
+        }, 2000)
       }
     </script>
   </body>
