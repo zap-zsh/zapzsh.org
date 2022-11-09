@@ -69,10 +69,10 @@ select {
   --bg: #151517;
   --bg-alt: #232323;
   --bg-dark: #151515;
-  --bg-acc-alt: #3a3a3e;
+  --bg-acc-alt: #333336;
   --yellow: #f2c744;
   --fg-alt: #7e7e87;
-  --yellow-alt: #F9F6EE;
+  --yellow-alt: #f9f6ee;
 
   /* Font */
   --ff: 'Inter', sans-serif;
@@ -116,8 +116,8 @@ main {
   text-align: center;
   align-items: center;
   flex-direction: column;
-  /* color: var(--bg-alt); */
   color: var(--yellow-alt);
+  width: 100%;
 
   /* border-style: solid; */
   /* border-color: red; */
@@ -139,6 +139,14 @@ main {
   margin-bottom: 30px;
 }
 
+.content {
+  display: none;
+}
+
+.button:hover > .content {
+  display: block;
+}
+
 .install-container {
   display: flex;
   justify-content: center;
@@ -147,22 +155,32 @@ main {
   flex-direction: column;
   gap: 1rem;
   border-radius: var(--border);
-  width: 100%;
+  max-width: 96%;
   /* height: 6rem; */
   background-color: var(--bg);
   padding: 1rem;
+  /* width: 95%; */
+
+  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.1);
 
   /* border-style: solid; */
   /* border-color: orange; */
   /* border-width: 2px; */
 }
 
+@media screen and (max-width: 300px) {
+  .install-container {
+    padding: 1rem 0 0 0; /* Take out the right, bottom and left padding */
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 .install-container h2 {
   font-size: 28px;
   font-weight: var(--fw-light);
   color: var(--yellow-alt);
-  padding: 12px;
-  padding-bottom: 30px;
+  /* padding: 20px; */
 
   /* border-style: solid; */
   /* border-color: red; */
@@ -183,13 +201,13 @@ main {
   /* width: 90%; */
   /* padding: 8px; */
 
-  /* border-style: solid; */
-  /* border-color: red; */
-  /* border-width: 1px; */
+  border-style: solid;
+  border-color: red;
+  border-width: 1px;
 }
 
 .code {
-  padding: 0 10px;
+  padding: 10px;
 }
 
 .zapped {
