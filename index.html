@@ -29,18 +29,11 @@
           <h2>To get <span class="zapped">Zapped</span> you can run:</h2>
           <div class="codeblock">
             <div class="code">
-              <!-- <button class="click-to-show"> -->
-              <!--   sh <(curl -s -->
-              <!--   https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh) -->
-              <!-- </p> -->
-              <button id="click-to-show" onclick="change()">
-                Click to see the command or ->
-              </button>
+              <p class="click-to-show">
+                sh <(curl -s
+                https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)
+              </p>
             </div>
-            <button
-              class="fa-regular fa-clipboard"
-              onclick="copyText()"
-            ></button>
           </div>
         </div>
       </div>
@@ -76,17 +69,6 @@
           'sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)'
         )
       }
-
-      function change() {
-        var elem = document.getElementById('click-to-show')
-        console.log(elem)
-        elem.innerHTML =
-          'sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)'
-      }
     </script>
-    <script
-      src="https://kit.fontawesome.com/2f25a70a73.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
