@@ -26,47 +26,23 @@
         <p><i>that does what you except.</i></p>
 
         <div class="container">
-          <h2>To get <span class="zapped">Zapped</span> you can run:</h2>
-          <div class="codeblock">
-            <div class="code">
-              <p>
-                sh <(curl -s https://raw<wbr />.githubusercontent<wbr />.com/zap-zsh/zap/master/install.sh)
-              </p>
-            </div>
+          <h2>To get <span class="zapped">Zapped</span> you can copy</h2>
+          <div class="codeblock" onclick="copy()">
+            sh <(curl -s https://raw<wbr />.githubusercontent<wbr />.com/zap-zsh/zap/master/install.sh)
           </div>
+          <div style='display:none;' id="test">Copied!</div>
         </div>
       </div>
     </main>
-    <!-- <div class="showcase-container"> -->
-    <!--   <section class="showcase"> -->
-    <!--     <div class="showcase-title"> -->
-    <!--       <p>Features</p> -->
-    <!--     </div> -->
-    <!--     <div class="item"> -->
-    <!--       <h4 class="keyword">Hackable</h4> -->
-    <!--       <h4 class="keyword_post"> -->
-    <!--         Understand and change the behavior of zap easily -->
-    <!--       </h4> -->
-    <!--     </div> -->
-    <!--     <div class="item"> -->
-    <!--       <h4 class="keyword">Out of your way</h4> -->
-    <!--       <h4 class="keyword_post">You're going to forget you are using zap</h4> -->
-    <!--     </div> -->
-    <!--     <div class="item"> -->
-    <!--       <h4 class="keyword">Minimalist</h4> -->
-    <!--       <h4 class="keyword_post">Simple by design</h4> -->
-    <!--     </div> -->
-    <!--     <div class="item"> -->
-    <!--       <h4 class="keyword">Instant</h4> -->
-    <!--       <h4 class="keyword_post">We don't slow your shell in any way</h4> -->
-    <!--     </div> -->
-    <!--   </section> -->
-    <!-- </div> -->
     <script>
-      function copyText() {
+      function copy() {
         navigator.clipboard.writeText(
           'sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)'
         )
+        document.getElementById('test').style.display = 'block'
+        setTimeout(function() {
+          document.getElementById('test').style.display = 'none';
+        }, 2000);
       }
     </script>
   </body>
