@@ -107,7 +107,7 @@ main {
 }
 
 .hero {
-  padding-bottom: 60px;
+  margin: 30px;
 }
 
 .introduction {
@@ -118,6 +118,7 @@ main {
   flex-direction: column;
   color: var(--yellow-alt);
   width: 100%;
+  gap: 1rem;
 }
 
 .zapped {
@@ -132,7 +133,7 @@ main {
   font-weight: var(--fw-light);
 }
 
-.introduction > p {
+.presentation > p {
   font-size: 21px;
   font-weight: var(--fw-regular);
   line-height: 41px;
