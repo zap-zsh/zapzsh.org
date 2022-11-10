@@ -169,6 +169,7 @@ main {
   border-radius: var(--border);
   position: relative;
   overflow: hidden;
+  font-size: var(--p-fz);
   font-family: monospace;
 }
 
