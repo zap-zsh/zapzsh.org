@@ -99,6 +99,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-inline: .5rem;
 
   background-color: var(--bg-alt);
 
@@ -166,11 +167,26 @@ main {
   color: var(--yellow-alt);
   padding: 12px;
   border-radius: var(--border);
+  position: relative;
+  overflow: hidden;
 }
 
 .codeblock:hover {
   background-color: #3f3f42;
   color: #e6e3dc;
+}
+
+#test {
+  position: absolute;
+  inset: 0;
+  background-color: #3f3f42;
+  color: #8bf244;
+  pointer-events: none;
+  padding: 12px;
+}
+
+#test > p {
+  margin: auto;
 }
 
 @media screen and (max-width: 300px) {
@@ -180,6 +196,6 @@ main {
     max-width: 100%;
   }
   .codeblock {
-    padding: 0px;
+    padding-inline: 0px;
   }
 }
