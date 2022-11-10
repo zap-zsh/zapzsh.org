@@ -203,7 +203,7 @@ main {
 
 .github > svg > g {
   fill: var(--yellow-alt);
-  transition: 200ms opacity ease-in-out;;
+  transition: 200ms opacity ease-in-out;
 }
 
 @media screen and (max-width: 300px) {
