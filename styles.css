@@ -99,7 +99,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-inline: .5rem;
+  padding-inline: 0.5rem;
 
   background-color: var(--bg-alt);
 
