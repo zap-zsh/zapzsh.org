@@ -189,6 +189,21 @@ main {
   margin: auto;
 }
 
+.github {
+  gap: 0.5rem;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.github:hover {
+  opacity: 1;
+}
+
+.github > svg > g {
+  fill: var(--yellow-alt);
+  transition: 200ms opacity ease-in-out;;
+}
+
 @media screen and (max-width: 300px) {
   .container {
     padding: 1rem 0 0 0; /* Take out the right, bottom and left padding */
@@ -196,6 +211,6 @@ main {
     max-width: 100%;
   }
   .codeblock {
-    padding-inline: 0px;
+    padding: 0px;
   }
 }
