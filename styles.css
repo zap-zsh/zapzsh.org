@@ -191,19 +191,29 @@ main {
   margin: auto;
 }
 
-.github {
-  gap: 0.5rem;
+.socials {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.socials > a {
+  font-size: 1.75rem;
   text-decoration: none;
-  opacity: 0.5;
-}
-
-.github:hover {
-  opacity: 1;
-}
-
-.github > svg > g {
-  fill: var(--yellow-alt);
+  color: var(--yellow-alt);
+  opacity: 0.4;
   transition: 200ms opacity ease-in-out;
+}
+
+.socials > a > svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: var(--yellow-alt);
+}
+
+.socials > a:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 300px) {
