@@ -225,4 +225,8 @@ main {
   .codeblock {
     padding: 0px;
   }
+
+  .hero {
+    width: 50%;
+  }
 }
