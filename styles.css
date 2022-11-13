@@ -92,6 +92,7 @@ body {
 
 /* Main is where the presentation is going to be placed */
 main {
+  overflow: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +102,7 @@ main {
   background-color: var(--bg-alt);
 
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .hero {
@@ -226,5 +227,13 @@ main {
   }
   .codeblock {
     padding: 0px;
+  }
+
+  .hero {
+    width: 50%;
+  }
+
+  main {
+    height: 100%;
   }
 }
