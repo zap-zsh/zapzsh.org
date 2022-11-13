@@ -79,9 +79,6 @@ select {
   /* Font weights */
   --fw-light: 300;
   --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-bold: 700;
-  --fw-black: 900;
 
   --border: 8px;
 }
@@ -191,6 +188,12 @@ main {
   margin: auto;
 }
 
+#test p > svg > path {
+  fill:  #8bf244;
+  width: 1rem;
+  height: 1rem;
+}
+
 .socials {
   padding-top: 1rem;
   display: flex;
@@ -199,7 +202,6 @@ main {
 }
 
 .socials > a {
-  font-size: 1.75rem;
   text-decoration: none;
   color: var(--yellow-alt);
   opacity: 0.4;
@@ -207,8 +209,8 @@ main {
 }
 
 .socials > a > svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   fill: var(--yellow-alt);
 }
 
