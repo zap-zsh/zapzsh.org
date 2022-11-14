@@ -24,8 +24,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -73,7 +73,7 @@ select {
   --yellow-alt: #f9f6ee;
 
   /* Font */
-  --ff: 'Inter', sans-serif;
+  --ff: "Inter", sans-serif;
   --h1-fz: 55px;
   --p-fz: 16px;
   /* Font weights */
@@ -190,7 +190,7 @@ main {
 }
 
 #test p > svg > path {
-  fill:  #8bf244;
+  fill: #8bf244;
   width: 1rem;
   height: 1rem;
 }
