@@ -148,7 +148,7 @@
           </a>
         </div>
       </div>
-      <div class="repos_container">
+      <div class="repos__container">
         <h3 class="repos_title">Zap Repositories</h3>
         <div id="repos" />
       </div>
@@ -166,7 +166,7 @@
             const repoElement = document.createElement("div");
             repoElement.classList.add("repo");
             repoElement.innerHTML = `
-                <a href="${repo.html_url}">
+                <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
                   <h4 class="repo__title">${repo.name}</h4>
                   <p class="repo__description">${repo.description}</p>
                 </a>
