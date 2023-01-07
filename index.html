@@ -156,13 +156,12 @@
     <script type="text/javascript" src="script.js"></script>
     <script type="module">
       import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
+      const repos = document.getElementById("repos");
 
       new Octokit().rest.repos.listForOrg({ org: "zap-zsh", type: "public" })
       .then(({data}) => {
          data.sort(({ stargazers_count: a }, { stargazers_count: b }) => (b !== undefined && a !== undefined) ? b - a : 0 ).filter(repo => repo.name !== ".github")
           .forEach((repo, i) => {
-            console.log(repo)
-            const repos = document.getElementById("repos");
             const repoElement = document.createElement("div");
             repoElement.classList.add("repo");
             repoElement.innerHTML = `
