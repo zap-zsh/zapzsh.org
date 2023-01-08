@@ -262,7 +262,7 @@ main {
   height: 100%;
 }
 
-.repos_title {
+.repos__title {
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -290,7 +290,7 @@ main {
   text-decoration: underline;
 }
 
-.repo_stats {
+.repo__stats {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,7 +298,7 @@ main {
   width: 100%;
 }
 
-.repo_stats > a {
+.repo__stats > a {
   opacity: 0.6;
   flex: 1;
   padding-bottom: 1.5rem;
@@ -306,12 +306,17 @@ main {
   align-items: center;
 }
 
-.repo_stats > a:first-child {
+.repo__stats > a:first-child {
   justify-content: flex-end;
 }
 
-.repo_stats > a:hover {
+.repo__stats > a:hover {
   opacity: 1;
+}
+
+#repos__message {
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 .stargazers > svg {
