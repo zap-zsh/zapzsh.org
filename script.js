@@ -36,7 +36,7 @@ codeBlock.addEventListener("click", copy);
 function copy() {
   navigator.clipboard
     .writeText(
-      "sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)"
+      "zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)"
     )
     .then(() => {
       document.getElementById("test").style.display = "flex";
