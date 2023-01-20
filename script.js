@@ -1,67 +1,36 @@
 import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
 
-const plugins = [
-  "zap-zsh/supercharge",
-  "zsh-users/zsh-autosuggestions",
-  "zsh-users/zsh-syntax-highlighting",
-  "hlissner/zsh-autopair",
-  "zsh-history-substring-search",
-  "zap-zsh/zap-prompt",
-  "zap-zsh/completions",
-  "zap-zsh/exa",
-  "zap-zsh/sudo",
-  "zap-zsh/vim",
-  "zap-zsh/atmachine-prompt",
-  "zap-zsh/satoshi-prompt",
-  "romkatv/powerlevel10k",
-  "zap-zsh/singularisart-prompt",
-  "zettlrobert/simple-prompt",
-  "zap-zsh/nvm",
-  "zap-zsh/fzf",
-  "Aloxaf/fzf-tab",
-  "Freed-Wu/fzf-tab-source",
-  "zap-zsh/fnm",
-  "conda-incubator/conda-zsh-completion",
-  "wintermi/zsh-brew",
-  "wintermi/zsh-gcloud",
-  "wintermi/zsh-lsd",
-  "wintermi/zsh-fnm",
-  "wintermi/zsh-golang",
-  "wintermi/zsh-rust",
-  "wintermi/zsh-starship",
-];
+const re = /-\s\[.+\]\(https:\/\/github\.com\/(\S+)\)/;
 
-const codeBlock = document.querySelector(".codeblock");
-codeBlock.addEventListener("click", copy);
-function copy() {
-  navigator.clipboard
-    .writeText(
-      "zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)"
-    )
-    .then(() => {
-      document.getElementById("test").style.display = "flex";
-      setTimeout(function() {
-        document.getElementById("test").style.display = "none";
-      }, 2000);
-    });
-}
-
-const repos = document.getElementById("repos");
-const message = document.getElementById("repos__message");
-message.innerHTML = "Loading...";
-const octokit = new Octokit();
-
-plugins.forEach((plugin) => {
-  const [owner, repo] = plugin.split("/");
-  octokit.rest.repos.get({
-    owner,
-    repo,
-  }).then(({ data }) => {
-    const { name, description, html_url, forks_count, stargazers_count } = data;
-    message.innerHTML = "";
-    const repo = document.createElement("div");
-    repo.className = "repo";
-    repo.innerHTML = `
+async function buildRepoSection(owner, repo, path) {
+  await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`)
+    .then((d) => d.json())
+    .then((j) => atob(j.content).split("\n"))
+    .then((arr) => {
+      const plugins = [];
+      arr.forEach((element) => {
+        let match = re.exec(element);
+        if (match != null) {
+          let plugin = match[1];
+          plugins.push(plugin);
+          const [owner, repo] = plugin.split("/");
+          octokit.rest.repos
+            .get({
+              owner,
+              repo,
+            })
+            .then(({ data }) => {
+              const {
+                name,
+                description,
+                html_url,
+                forks_count,
+                stargazers_count,
+              } = data;
+              message.innerHTML = "";
+              const repo = document.createElement("div");
+              repo.className = "repo";
+              repo.innerHTML = `
       <a href="${html_url}" target="_blank" rel="noopener noreferrer">
         <h4 class="repo__title">${name}</h4>
         <p class="repo__description">${description}</p>
@@ -80,9 +49,36 @@ plugins.forEach((plugin) => {
         ${forks_count}
       </a>
     `;
-    repos.appendChild(repo);
-  }).catch(error => {
-      message.innerHTML = "Something went wrong";
-      console.error(error);
-    })
-});
+              repos.appendChild(repo);
+            })
+            .catch((error) => {
+              message.innerHTML = "Something went wrong";
+              console.error(error);
+            });
+          console.log(`https://github.com/${plugin}`);
+        }
+      });
+    });
+}
+
+const codeBlock = document.querySelector(".codeblock");
+codeBlock.addEventListener("click", copy);
+function copy() {
+  navigator.clipboard
+    .writeText(
+      "zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)"
+    )
+    .then(() => {
+      document.getElementById("test").style.display = "flex";
+      setTimeout(function () {
+        document.getElementById("test").style.display = "none";
+      }, 2000);
+    });
+}
+
+const repos = document.getElementById("repos");
+const message = document.getElementById("repos__message");
+message.innerHTML = "Loading...";
+const octokit = new Octokit();
+
+buildRepoSection("zap-zsh", "outlet", "README.md");
