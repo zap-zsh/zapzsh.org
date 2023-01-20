@@ -116,7 +116,7 @@ main {
   color: var(--yellow-alt);
   width: 100%;
   gap: 1rem;
-  min-height: min(90vh, 70rem);
+  min-height: min(85vh, 70rem);
 }
 
 .zapped {
