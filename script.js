@@ -1,6 +1,6 @@
 import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
 
-const re = /-\s\[.+\]\(https:\/\/github\.com\/(\S+)\)/;
+const re = /-\s\[.+\]\(https:\/\/github\.com\/(\S+)\)\s-/;
 
 async function buildRepoSection(owner, repo, path) {
   await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`)
