@@ -71,6 +71,7 @@ select {
   --bg-acc-alt: #333336;
   --yellow: #f2c744;
   --yellow-alt: #f9f6ee;
+  --fg-dim: #aaaaba;
 
   /* Font */
   --ff: "Inter", sans-serif;
@@ -145,7 +146,7 @@ main {
   align-items: center;
   align-content: center;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.25rem;
   border-radius: var(--border);
   max-width: 96%;
   background-color: var(--bg);
@@ -158,6 +159,19 @@ main {
   font-size: 28px;
   font-weight: var(--fw-light);
   color: var(--yellow-alt);
+}
+
+.wrapper-release-installer {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.wrapper-release-installer p {
+  display: flex;
+  margin-left: 1rem;
+  color: var(--fg-dim);
 }
 
 .codeblock {
