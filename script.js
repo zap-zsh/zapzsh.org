@@ -1,4 +1,4 @@
-import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
+import { Octokit } from "https://esm.sh/@octokit/rest";
 
 const re = /-\s\[.+\]\(https:\/\/github\.com\/(\S+)\)\s-/;
 
