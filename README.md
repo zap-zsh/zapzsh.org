@@ -12,4 +12,4 @@
 
 ## Live Preview
 
-www.zapzsh.org
+www.zapzsh.com
