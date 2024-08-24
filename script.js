@@ -1,6 +1,6 @@
 import { Octokit } from "https://esm.sh/@octokit/rest";
 
-const re = /-\s\[.+\]\(https:\/\/github\.com\/(\S+)\)\s-/;
+const re = /-\s+\[.+\]\(https:\/\/github\.com\/(\S+)\)\s-/;
 
 async function buildRepoSection(owner, repo, path) {
   await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`)
@@ -66,7 +66,7 @@ codeBlock.addEventListener("click", copy);
 function copy() {
   navigator.clipboard
     .writeText(
-      "zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1"
+      "zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1",
     )
     .then(() => {
       document.getElementById("test").style.display = "flex";
